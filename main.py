@@ -43,7 +43,7 @@ def main():
         # Load embeddings if needed:
         if isinstance(settings.model.token_emb, str):
             settings.model.token_emb = embedding_loader.load_word_embeddings(settings.model.token_emb,
-                                                                             settings.data.dataset, logger)
+                                                                             settings.data.dataset, train_data, logger)
         if isinstance(settings.model.speaker_emb, str):
             settings.model.speaker_emb = embedding_loader.load_entity_embeddings(settings.model.speaker_emb,
                                                                              settings.data.entity_map, logger)

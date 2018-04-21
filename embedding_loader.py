@@ -46,7 +46,7 @@ def fill_missing_embeddings(word_embeddings, unk_inds, found_inds):
     word_embeddings[unk_inds] += avg_entity_vecs*1e-2
     
 
-def load_word_embeddings(embeddings_fname, training_datapath, logger=None):
+def load_word_embeddings(embeddings_fname, training_datapath, training_data, logger=None):
     """
     :param embeddings_fname: The name of the file containing pre-trained embeddings. 
             E.g., the Google-news w2v embeddings
@@ -62,7 +62,7 @@ def load_word_embeddings(embeddings_fname, training_datapath, logger=None):
             logger.whisper("Loading token embedding from {0}".format(word_emb_fname))
         word_embeddings = np.load(word_emb_fname)
     else:
-        vocabulary_idx_to_word,_ = data_utils.get_vocabulary(vocab_fname, extract_from=training_datapath, logger=logger)
+        vocabulary_idx_to_word,_ = data_utils.get_vocabulary(vocab_fname, extract_from=training_data, logger=logger)
         all_word_vectors = load_word2vec_embeddings(embeddings_fname)
         word_embeddings,_,_ = filter_embeddings(all_word_vectors, vocabulary_idx_to_word)
         save_word_embeddings(word_embeddings, word_emb_fname)
@@ -99,35 +99,3 @@ def save_word_embeddings(word_embeddings, outfname, logger=None):
     np.save(outfname, word_embeddings)
     if not logger is None:
         logger.whisper("Embeddings saved in \n\t{0}".format(outfname))   
-
-
-    
-if __name__=="__main__":
-    LOAD_WORD_EMBEDDINGS = True
-    LOAD_ENTITY_EMBEDDINGS = True 
-    
-    if LOAD_WORD_EMBEDDINGS:
-        # Load or filter/save relevant word embeddings
-        level = 'episode' # 'scene'
-        dataset = 'test' # 'trial' #'train' # 'test'
-        corpus = 'google_news'
-        
-        training_datapath = data_paths[dataset][level]
-        embeddings_fname = data_paths["embeddings"][corpus]
-        word_embeddings = load_word_embeddings(embeddings_fname, training_datapath)
-        
-        print(word_embeddings)
-    
-    if LOAD_ENTITY_EMBEDDINGS:
-        # Load or filter/save entity embeddings
-        trained_embeddings = "embeddings/win21--1.word_hidden_fold-4.npy"
-        freebase_embeddings = data_paths["embeddings"]["freebase"]
-        
-        embeddings_path = freebase_embeddings
-        entity_embeddings = load_entity_embeddings(embeddings_path,
-                                                data_paths["entity_map"])
-    
-        print(entity_embeddings)
-    
-    
-    

@@ -158,7 +158,7 @@ def extract_answers(data):
     return answers[answers != NON_ENTITY_MENTION].reset_index(drop=True)
 
 
-def extract_vocabulary(data_path, entity_map_path=None, logger=None):
+def extract_vocabulary(data, entity_map_path=None, logger=None):
     """
     Collect all tokens from data in indexed vocabulary.
     :param data_path: path of file containing the language data the model is trained/tested on, and from which the vocabulary is extracted.
@@ -166,13 +166,6 @@ def extract_vocabulary(data_path, entity_map_path=None, logger=None):
             Each line contains the word idx and the word, separated by tabs ("\t").
     :return: token-to-id mapping (np.array), id-to-token mapping (dictionary)
     """
-    if entity_map_path is not None:
-        entity_idx_to_name, entity_name_to_idx = load_entity_map(entity_map_path)
-    else:
-        entity_name_to_idx = None
-    # Load Pandas DataFrame with 'token' series
-    data = load_data(data_path, entity_name_to_idx, logger)
-        
     vocabulary_idx_to_word = sorted(data['token'].str.lower().drop_duplicates().values)
     vocabulary_idx_to_word.insert(UNKNOWN_WORD_IDX, UNKNOWN)
     vocabulary_word_to_idx = {word: idx for idx, word in enumerate(vocabulary_idx_to_word)}
