@@ -132,5 +132,5 @@ This project has received funding from the European Research Council (ERC) under
 [amore-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/logo-AMORE-blue-withtext.png?token=AjOJwOc8AdAdIZpd5DIY73FjzlhJPE1-ks5a5I3TwA%3D%3D
 [upf-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/upf-logo.png?token=AjOJwAd8ucwR8DKYh2pfb0K2_7v9PXbfks5a5I3VwA%3D%3D "Universitat Pompeu Fabra"
 [erc-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/LOGO-ERC.jpg?token=AjOJwN1l1Fw6RdylKUlTF3-KzJZmhCsCks5a5I06wA%3D%3D
-[eu-flag]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/flag_yellow_low.jpeg?token=AjOJwF2ymtVK1WoXi4oIr_qgnSpstmReks5a5I3RwA%3D%3D
+[eu-flag]: logos/flag_yellow_low.jpeg
 
