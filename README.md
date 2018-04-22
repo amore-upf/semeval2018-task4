@@ -19,10 +19,11 @@ where
 - `no_eval` applies to the deploy phase. It can be set if you do not want to evaluate the model, but just want to obtain predictions for some input data. If the input data does not contain target entity ids, `no_eval` is set by default.
 - `no_cuda`is set to run the system in CPU mode.
 
+### SemEval task data
+First please download the SemEval datasets by running the script `_fetch_data.sh` from within the semeval-task4 folder. (Alternatively, you can download the data yourself from [the organizers' github](https://github.com/emorynlp/semeval-2018-task4/tree/master/dat). Store them in the folder data/friends.)
+
 
 ### Running and evaluating the AMORE-UPF model on the SemEval test data
-
-First please download the SemEval datasets from [the organizers' github](https://github.com/emorynlp/semeval-2018-task4/tree/master/dat.), and store them in the folder data/friends. 
 
 <code>python main.py --deploy_data test --model models/semeval-winning-model/amore-upf [--no_cuda]</code>
 
@@ -43,7 +44,7 @@ This will produce the following output files, saved in the directory
 
 ### Demo
 
-The demo describes how to train, deploy and evaluate a model from scratch using the official trial data of the SemEval task. This dataset needs to be downloaded separately [here](https://competitions.codalab.org/my/datasets/download/d8e0b7e1-1c4f-4171-93e9-74339e6c759e).
+The demo describes how to train, deploy and evaluate a model from scratch using the official trial data of the SemEval task. If you have not used the script `_fetch_data.sh` ([see the section on task data above](#semeval-task-data)) for data download, you first need to get the trial data [here](https://competitions.codalab.org/my/datasets/download/d8e0b7e1-1c4f-4171-93e9-74339e6c759e).
 
 #### Training
 `python main.py --phase train -c config_demo.ini [-r] [--no_cuda]`
@@ -73,9 +74,10 @@ For example, running the command above in April 2018 will train a model with 2-f
 The prefix <tt>fixed</tt> means that the model was trained using fixed hyperparameters (since parameter `r` was not set, see above).
 
 ##### Using pre-trained word embeddings
-Note that the model in this demo initialises the token embeddings randomly. If you want to use  the pre-trained Google News skip-gram word embeddings (as AMORE-UPF does), you first need to download the data from here: 
+Note that the model in this demo initialises the token embeddings randomly. If you want to use  the pre-trained Google News skip-gram word embeddings (as AMORE-UPF does), you first need to download the data. You can do so either by setting the parameter in <tt>GET_GOOGLE_NEWS_EMBEDDINGS</tt> in `_fetch_data.sh`  to true and running the script again. Or you can directly download the vectors from here: 
 [GoogleNews-vectors-negative300.bin.gz](https://code.google.com/archive/p/word2vec/).
-Put this in the data/ folder. In <tt>config_demo.ini</tt>, set the paratemer <tt>token emb</tt> to <tt>google_news</tt>.
+Put this in the data/ folder. <br/>
+In <tt>config_demo.ini</tt>, set the paratemer <tt>token emb</tt> to <tt>google_news</tt>.
 
 
 
@@ -127,8 +129,8 @@ This project has received funding from the European Research Council (ERC) under
 <p align="right">![(ERC logo)][erc-logo] &nbsp; ![(EU flag)][eu-flag]</p>
 
 
-[amore-logo]: https://raw.githubusercontent.com/lauraina/AMORE-semeval/memory-efficient/logos/logo-AMORE-blue-withtext.png?token=AS0KkgGobBv3k09Or_6Bo7AR8r_32Jt9ks5a4u9UwA%3D%3D "A distributional MOdel of Reference to Entities"
-[upf-logo]: https://raw.githubusercontent.com/lauraina/AMORE-semeval/memory-efficient/logos/upf-logo.png?token=AS0KkoTyG_CjCMxN8E0CNmXqHUgVoYMOks5a4u9swA%3D%3D "Universitat Pompeu Fabra"
-[erc-logo]: https://raw.githubusercontent.com/lauraina/AMORE-semeval/memory-efficient/logos/LOGO-ERC.jpg?token=AS0KksliLXUy3R5G-ri7SBdJJfLDogGcks5a4u5awA%3D%3D "ERC-LOGO"
-[eu-flag]: https://raw.githubusercontent.com/lauraina/AMORE-semeval/memory-efficient/logos/flag_yellow_low.jpeg?token=AS0KkpS5zuY5A_fhlrNGwa_9vUYqDHVfks5a4bRpwA%3D%3D "EU-FLAG"
+[amore-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/logo-AMORE-blue-withtext.png?token=AjOJwOc8AdAdIZpd5DIY73FjzlhJPE1-ks5a5I3TwA%3D%3D
+[upf-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/upf-logo.png?token=AjOJwAd8ucwR8DKYh2pfb0K2_7v9PXbfks5a5I3VwA%3D%3D "Universitat Pompeu Fabra"
+[erc-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/LOGO-ERC.jpg?token=AjOJwN1l1Fw6RdylKUlTF3-KzJZmhCsCks5a5I06wA%3D%3D
+[eu-flag]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/flag_yellow_low.jpeg?token=AjOJwF2ymtVK1WoXi4oIr_qgnSpstmReks5a5I3RwA%3D%3D
 
