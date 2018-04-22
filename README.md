@@ -1,4 +1,10 @@
 
+[amore-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/logo-AMORE-blue-withtext.png?token=AjOJwOc8AdAdIZpd5DIY73FjzlhJPE1-ks5a5I3TwA%3D%3D
+[upf-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/upf-logo.png?token=AjOJwAd8ucwR8DKYh2pfb0K2_7v9PXbfks5a5I3VwA%3D%3D "Universitat Pompeu Fabra"
+[erc-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/LOGO-ERC.jpg?token=AjOJwN1l1Fw6RdylKUlTF3-KzJZmhCsCks5a5I06wA%3D%3D
+[eu-flag]: logos/flag_yellow_low.jpeg
+
+
 <p align="right">![AMORE-UPF][amore-logo] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![UPF][upf-logo]</p>
 
 # AMORE-UPF  
@@ -127,10 +133,3 @@ The system is described in this paper [pdf]: <a target="_blank" href="http://www
 ## Acknowledgements
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 715154), and from the Spanish Ram\'on y Cajal programme (grant RYC-2015-18907). We are grateful to the NVIDIA Corporation for the donation of GPUs used for this research. We are also very grateful to the Pytorch developers. This paper reflects the authors' view only, and the EU is not responsible for any use that may be made of the information it contains.
 <p align="right">![(ERC logo)][erc-logo] &nbsp; ![(EU flag)][eu-flag]</p>
-
-
-[amore-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/logo-AMORE-blue-withtext.png?token=AjOJwOc8AdAdIZpd5DIY73FjzlhJPE1-ks5a5I3TwA%3D%3D
-[upf-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/upf-logo.png?token=AjOJwAd8ucwR8DKYh2pfb0K2_7v9PXbfks5a5I3VwA%3D%3D "Universitat Pompeu Fabra"
-[erc-logo]: https://raw.githubusercontent.com/amore-upf/semeval2018-task4/master/logos/LOGO-ERC.jpg?token=AjOJwN1l1Fw6RdylKUlTF3-KzJZmhCsCks5a5I06wA%3D%3D
-[eu-flag]: logos/flag_yellow_low.jpeg
-
