@@ -285,13 +285,14 @@ def get_cv_folds(data, settings, logger=None):
         if logger is not None:
             logger.whisper('Folds loaded from ' + settings.folds_dir)
     else:
+        if logger is not None:
+            logger.whisper('Creating folds for cross-validation...')
         sequence_bounds = get_sequence_bounds(data, settings.level)
         folds, fold_weights = _create_folds_of_sequences(data, sequence_bounds, settings.folds)
         with open(settings.folds_dir, 'wb') as f:
             pickle.dump(folds, f)
         if logger is not None:
-            logger.whisper('New folds created; saved to ' + settings.folds_dir)
-            logger.whisper('  Fold weights: ' + str(fold_weights))
+            logger.whisper('  ...Folds saved to ' + settings.folds_dir + ' (weights: ' + str(fold_weights)+')')
     return folds
 
 
