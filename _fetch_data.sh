@@ -26,6 +26,7 @@ if [ $GET_SEMEVAL_DATA == true ]; then
         done
     done
     wget $github_path'ref.out' -O $friends_subfolder/'ref.out';
+    wget $github_path'friends_entity_map.txt' -O $friends_subfolder/'friends_entity_map.txt';
     
     echo ">> Downloading SemEval-Task-4 trial data."
     https://github.com/emorynlp/semeval-2018-task4/tree/master/dat
