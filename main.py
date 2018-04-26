@@ -40,6 +40,13 @@ def main():
         vocabulary_idx_to_word, vocabulary_word_to_idx = data_utils.get_vocabulary(settings.data.vocabulary,
                                                                                    extract_from=train_data,
                                                                                    logger=logger)
+
+        # Avoid loading/generating google news embeddings in deploy phase:
+        if args.phase == 'deploy' and settings.model.token_emb == config_utils.data_paths["embeddings"]["google_news"]:
+            settings.model.token_emb = 300
+            # Appropriate embeddings will be loaded anyway from saved .pt model file.
+            # TODO: This won't generalize when using other embeddings.
+
         # Load embeddings if needed:
         if isinstance(settings.model.token_emb, str):
             settings.model.token_emb = embedding_loader.load_word_embeddings(settings.model.token_emb,
