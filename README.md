@@ -77,7 +77,7 @@ The prefix <tt>fixed</tt> means that the model was trained using fixed hyperpara
 Note that the model in this demo initialises the token embeddings randomly. If you want to use  the pre-trained Google News skip-gram word embeddings (as AMORE-UPF does), you first need to download the data. You can do so either by setting the parameter in <tt>GET_GOOGLE_NEWS_EMBEDDINGS</tt> in `_fetch_data.sh`  to true and running the script again. Or you can directly download the vectors from here: 
 [GoogleNews-vectors-negative300.bin.gz](https://code.google.com/archive/p/word2vec/).
 Put this in the data/ folder. <br/>
-In <tt>config_demo.ini</tt>, set the paratemer <tt>token emb</tt> to <tt>google_news</tt>.
+In <tt>config_demo.ini</tt>, set the parameter <tt>token emb</tt> to <tt>google_news</tt>.
 
 
 
