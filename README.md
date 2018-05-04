@@ -1,4 +1,4 @@
-![AMORE-UPF](logos/logo-AMORE-blue-withtext.png)                  ![UPF](logos/upf-logo.png)
+![AMORE-UPF](logos/logo-AMORE-blue-withtext.png)    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;      ![UPF](logos/upf-logo.png)
 
 # AMORE-UPF  
 
@@ -126,6 +126,6 @@ The system is described in this paper [pdf]: <a target="_blank" href="http://www
 ## Acknowledgements
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 715154), and from the Spanish Ram\'on y Cajal programme (grant RYC-2015-18907). We are grateful to the NVIDIA Corporation for the donation of GPUs used for this research. We are also very grateful to the Pytorch developers. This paper reflects the authors' view only, and the EU is not responsible for any use that may be made of the information it contains.
 
-![(ERC logo)](logos/LOGO-ERC.jpg)                   ![(EU flag)](logos/flag_yellow_low.jpeg)
+![(ERC logo)](logos/LOGO-ERC.jpg)      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;       ![(EU flag)](logos/flag_yellow_low.jpeg)
 
 
