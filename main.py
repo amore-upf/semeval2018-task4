@@ -89,7 +89,7 @@ def run_training(settings, data, vocabulary_idx_to_word, vocabulary_word_to_idx,
     input_vecs, targets = data_utils.create_input_vectors(data, vocabulary_idx_to_word, vocabulary_word_to_idx)
 
     # Compute the class weights if necessary
-    if True: #hasattr(settings.training, 'class_weights'): # for configs w/o attribute
+    if settings.training.class_weights:
         class_weights = np.bincount(targets[targets != -1], minlength = settings.model.num_entities)
         class_weights = 1.0 / (np.sqrt(class_weights) + 1e-6)   # 1e-6 for numerical stability (though the inf values wouldn't be used anyway)
         settings.training.class_weights = class_weights
