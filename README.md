@@ -106,7 +106,7 @@ where
 * `no_eval` can be set if you do not want to evaluate the model, but just want to obtain predictions for some input data. If the input data does not contain target entity ids, `no_eval`is set by default.
 
 ## Citation
-%TODO: Include remarks about license.
+We release the source code under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>, so feel free to share and/or adapt, provided you give appropriate credit.
 
 The system is described in this paper [pdf]: <a target="_blank" href="http://www.coli.uni-saarland.de/~carina/semeval2018-amore_upf-final.pdf">AMORE-UPF at SemEval-2018 Task 4: BiLSTM with Entity Library</a>
 
