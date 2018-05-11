@@ -336,11 +336,13 @@ def parse_args_and_settings():
 
     # When evaluating, obtain run name etcetera from the provided answers .csv file:
     if args.phase == 'evaluate':
-        args.run_name = os.path.basename(args.answer_file).strip('.csv')
+        args.run_name = os.path.basename(args.answer_file)[:-4]
         if args.run_name.endswith('--ensemble'):
             args.run_name = args.run_name[:-10]  # removes the --ensemble suffix
         if '--fold' in args.run_name:
             args.run_name = args.run_name.split('--fold')[0]
+        if '--cv' in args.run_name:
+            args.run_name = args.run_name.split('--cv')[0]
         args.model_dir = None  # This is kinda ugly.
 
     # For train phase a config file is mandatory; otherwise it can be automatically obtained:
